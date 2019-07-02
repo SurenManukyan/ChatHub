@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ChatHubServer.Data.EFCore;
 using ChatHubServer.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -40,7 +41,7 @@ namespace ChatHubServer
                     options.Audience = "registerApi";
                 });
 
-
+            services.AddScoped<EFCoreUserRepository>();
             services.AddDbContext<UserContext>(opt =>
                     opt.UseSqlServer(Configuration.GetConnectionString("UserDatabase")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
