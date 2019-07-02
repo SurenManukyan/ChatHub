@@ -22,7 +22,6 @@ namespace ChatHubServer.Controllers
             _context = context;
         }
 
-
         
         // GET: api/Users
         [HttpGet]
