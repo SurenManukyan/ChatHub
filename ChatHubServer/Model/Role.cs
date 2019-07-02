@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatHubServer.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChatHubServer.Model
 {
-    public class Role
+    public class Role : IEntity
     {
         [Key]
         public int Id { get; set; }
