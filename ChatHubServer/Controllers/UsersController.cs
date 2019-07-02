@@ -6,12 +6,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ChatHubServer.Model;
-using Microsoft.AspNetCore.Authorization;
 
 namespace ChatHubServer.Controllers
 {
-    [Route("identity")]
-    [Authorize]
+    [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -22,8 +20,6 @@ namespace ChatHubServer.Controllers
             _context = context;
         }
 
-
-        
         // GET: api/Users
         [HttpGet]
         public IEnumerable<User> GetUsers()
